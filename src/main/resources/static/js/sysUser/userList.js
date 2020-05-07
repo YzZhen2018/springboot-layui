@@ -9,7 +9,7 @@ $(function() {
         form = layui.form;
 
         tableIns=table.render({
-            elem: '#uesrList',
+            elem: '#userList',
             url:'/user/getUserList',
             method: 'post', //默认：get请求
             cellMinWidth: 80,
