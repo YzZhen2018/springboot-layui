@@ -44,6 +44,7 @@
 
         <div style="display:none;" id="currentUser"><shiro:principal property="id"></shiro:principal></div>
 
+        <table id="serviceList" lay-filter="serviceTable"></table>
         <table id="userList" lay-filter="userTable"></table>
 
         <script type="text/html" id="optBar">
@@ -99,8 +100,9 @@
 
     <!--底部-->
     <div th:replace="fragments/footer :: footer"></div>
-    <script src="/js/dateUtils.js"></script>
-    <script src="/js/sysUser/userList.js"></script>
+    <script src="/static/js/dateUtils.js"></script>
+    <script src="/static/js/service/serviceList.js"></script>
+    <script src="/static/js/sysUser/userList.js"></script>
 
 </div>
 </body>

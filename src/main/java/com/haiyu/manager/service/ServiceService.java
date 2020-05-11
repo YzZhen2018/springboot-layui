@@ -20,7 +20,7 @@ import java.util.Map;
  */
 public interface ServiceService {
 
-    List<ServiceDTO> getServiceList(ServiceDTO serviceDTO);
+    PageDataResult getServiceList(ServiceDTO serviceDTO, Integer pageNum, Integer pageSize);
 
     ServiceDTO selectBykey(@Param("id") Integer id);
 

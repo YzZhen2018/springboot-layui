@@ -9,8 +9,8 @@ $(function() {
         form = layui.form;
 
         tableIns=table.render({
-            elem: '#userList',
-            url:'/user/getUserList',
+            elem: '#serviceList',
+            url:'/service/getServiceList',
             method: 'post', //默认：get请求
             cellMinWidth: 80,
             page: true,
@@ -26,11 +26,11 @@ $(function() {
             },
             cols: [[
                 {type:'numbers'}
-                ,{field:'sysUserName', title:'用户名',align:'center'}
-                ,{field:'roleName', title:'角色类型',align:'center'}
-                ,{field:'userPhone', title:'手机号',align:'center'}
-                ,{field:'regTime', title: '注册时间',align:'center'}
-                ,{field:'userStatus', title: '是否有效',align:'center'}
+                ,{field:'name', title:'主机名',align:'center'}
+                ,{field:'state', title:'状态',align:'center'}
+                ,{field:'type', title:'实例类型',align:'center'}
+                ,{field:'ip', title: '主机IP',align:'center'}
+                ,{field:'modelType', title: '付费模式',align:'center'}
                 ,{title:'操作',align:'center', toolbar:'#optBar'}
             ]],
             done: function(res, curr, count){
@@ -53,7 +53,7 @@ $(function() {
         });
 
         //监听工具条
-        table.on('tool(userTable)', function(obj){
+        table.on('tool(serviceTable)', function(obj){
             var data = obj.data;
             if(obj.event === 'del'){
                 //删除
@@ -68,7 +68,7 @@ $(function() {
         });
 
         //监听提交
-        form.on('submit(userSubmit)', function(data){
+        form.on('submit(serviceSubmit)', function(data){
             // TODO 校验
             formSubmit(data);
             return false;
@@ -100,8 +100,8 @@ $(function() {
 function formSubmit(obj){
     $.ajax({
         type: "POST",
-        data: $("#userForm").serialize(),
-        url: "/user/setUser",
+        data: $("#serviceForm").serialize(),
+        url: "/service/setService",
         success: function (data) {
             if (data.code == 1) {
                 layer.alert(data.msg,function(){
