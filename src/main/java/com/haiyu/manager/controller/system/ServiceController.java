@@ -56,7 +56,7 @@ public class ServiceController {
      * @auther: youqing
      * @date: 2018/11/21 11:10
      */
-    @RequestMapping(value = "/getServiceList", method = RequestMethod.POST)
+    @RequestMapping("/getServiceList")
     @ResponseBody
     public PageDataResult getServiceList(@RequestParam("pageNum") Integer pageNum,
                                       @RequestParam("pageSize") Integer pageSize,/*@Valid PageRequest page,*/ ServiceDTO serviceDTO) {
